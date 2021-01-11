@@ -14,11 +14,9 @@ jQuery(function($) {
     var text      = _form.querySelector('[name="notes"]');
     var paint_row = _form.querySelector('[name="paint_row"]');
     var photo_row = _form.querySelector('[name="photo_row"]');
-    var security  = _form.querySelector('[name="fww-special-string"]');
     
     var data = {
       'action': 'update_image',
-      'security': security.value,
       'photo_id': photo.value,
       'post_id': post.value,
       'checkbox': checkbox.checked,
@@ -31,6 +29,7 @@ jQuery(function($) {
 
     $.post( fww_ajax_object.ajax_url, data, function( response ) {
       console.log( response );
+      $(text).notify( response, {autoHideDelay: 3000, className: 'success'} )
     } )
   }
 });

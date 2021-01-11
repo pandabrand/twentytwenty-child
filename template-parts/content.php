@@ -68,7 +68,6 @@
 												<input type="hidden" name="photo_id" value="<?php echo $image['image']; ?>">
 												<input type="hidden" name="paint_row" value="<?php echo $key; ?>">
 												<input type="hidden" name="photo_row" value="<?php echo $repeater_id; ?>">
-												<?php wp_nonce_field( 'update_image', 'fww-special-string' ); ?>
 												<button value="submit" class="submit-button">Submit</button>
 											</form>
 										</div>
