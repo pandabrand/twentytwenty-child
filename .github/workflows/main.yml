@@ -23,12 +23,12 @@ jobs:
         
       - name: sync
         env:
-          dest: 'root@plein-air-archive-cms:/srv/www/cms.pleinairarchive.com/current/web/app/themes/twentytwenty-child'
+          dest: 'root@165.227.253.183:/srv/www/cms.pleinairarchive.com/current/web/app/themes/twentytwenty-child'
         run: |
           echo "${{secrets.DEPLOY_KEY}}" > deploy_key
           chmod 600 ./deploy_key
           rsync -chav -o -g --delete -e 'ssh -i ./deploy_key -o StrictHostKeyChecking=no' --exclude /deploy_key --exclude /.git/ --exclude /.github/ ./ ${{env.dest}}
-          ssh -i ./deploy_key -o StrictHostKeyChecking=no chown -R web:www-data /srv/www/cms.pleinairarchive.com/current/web/app/themes/twentytwenty-child
+          ssh -i ./deploy_key -o StrictHostKeyChecking=no root@165.227.253.183 chown -R web:www-data /srv/www/cms.pleinairarchive.com/current/web/app/themes/twentytwenty-child
                  
             
             
