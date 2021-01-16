@@ -55,3 +55,5 @@ function write_log( $log ) {
 			error_log( $log );
 	}
 }
+
+define( 'GRAPHQL_JWT_AUTH_SECRET_KEY', 'K8pU.>CyBl(Z+=WHZ3E<cTPZ>pNMO<ZI=!Z?gUso>a-]RaLUJ@|d~5|$v*0F=F%[' );
