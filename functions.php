@@ -48,6 +48,18 @@ function fww_update_image() {
 	wp_die( 'picture updated' );
 }
 
+function paa_admin_order_posts( $query ) {
+	if ( ! is_admin() || ! $query->is_main_query() ) {
+		return;
+	}
+
+	$query->set( 'orderby', 'title' );
+	$query->set( 'order', 'DESC' );
+
+}
+
+add_action( 'pre_get_posts', 'paa_admin_order_posts' );
+
 function write_log( $log ) {
 	if ( is_array( $log ) || is_object( $log ) ) {
 			error_log( print_r( $log, true ) );
