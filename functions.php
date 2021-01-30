@@ -54,7 +54,7 @@ function paa_admin_order_posts( $query ) {
 	}
 
 	$query->set( 'orderby', 'title' );
-	$query->set( 'order', 'DESC' );
+	$query->set( 'order', 'ASC' );
 
 }
 
